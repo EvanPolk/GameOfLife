@@ -91,11 +91,13 @@ function ViewPort() {
     if (cur === 1) {
       if (adjacentSum < 2) {
         return 0;
-      } else if (adjacentSum > 3) {
-        return 0;
-      } else {
-        return 1;
       }
+
+      if (adjacentSum > 3) {
+        return 0;
+      }
+
+      return 1;
     }
     /* If some other number comes in, in an effort to handle errors I'm just going
      * to return zero and assume the cell is dead, and log it in console
